@@ -9,6 +9,9 @@
 
 ## Related Projects
 
-
 * https://tosdr.org/index.html https://github.com/tosdr/tosdr.org
 * https://github.com/ecprice/newsdiffs
+
+## LICENSE
+
+GPLv3
