@@ -17,3 +17,9 @@ func IsGitDir(path string) error {
 	// TODO: Check if the directory is a git repo.
 	return nil
 }
+
+func MkDir(path string) {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		os.Mkdir(path, os.ModePerm)
+	}
+}
