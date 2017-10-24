@@ -49,9 +49,9 @@ func run() error {
 	}
 	sourceManager := source.NewManager()
 	sourceManager.AddSource(source.Source{
-		URL: "http://huanle.qq.com/cp/a20170209notice/",
+		URL: "http://localhost:9080/text.html",
 	})
-	contentCrawler := crawler.New(sourceManager, "NO")
+	contentCrawler := crawler.New(sourceManager, "/home/ist/go/src/github.com/gaocegege/tosknight/storage")
 	contentCrawler.Run()
 	log.Println("Run called.")
 	return nil
