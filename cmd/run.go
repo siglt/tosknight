@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"github.com/gaocegege/tosknight/crawler"
 	"github.com/gaocegege/tosknight/source"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -46,7 +47,12 @@ func run() error {
 	if sourceFile == "" {
 		log.Fatalln("There is no source file given")
 	}
-	source.ParseSourceFile(sourceFile)
+	sourceManager := source.NewManager()
+	sourceManager.AddSource(source.Source{
+		URL: "http://huanle.qq.com/cp/a20170209notice/",
+	})
+	contentCrawler := crawler.New(sourceManager, "NO")
+	contentCrawler.Run()
 	log.Println("Run called.")
 	return nil
 }

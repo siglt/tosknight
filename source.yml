@@ -1,3 +1,5 @@
-Webs:
+webs:
   - http://huanle.qq.com/cp/a20170209notice/
   - http://test.tosback.com
+
+storage: "/home/ist/go/src/github.com/gaocegege/tosknight/storage"
