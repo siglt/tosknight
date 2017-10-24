@@ -9,7 +9,7 @@
 ### TODO
 
 * Config 文件读取有问题，考虑是不是直接用 cobra 集成的
-* 内容 diff 和 modified 的实现与测试
+* storage 的 git Commit
 
 ## 计划内功能
 
