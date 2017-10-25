@@ -1,20 +1,9 @@
-// Copyright © 2017 NAME HERE <EMAIL ADDRESS>
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 package cmd
 
 import (
+	"path/filepath"
+
+	"github.com/siglt/tosknight/config"
 	"github.com/siglt/tosknight/crawler"
 	"github.com/siglt/tosknight/source"
 	log "github.com/sirupsen/logrus"
@@ -43,14 +32,21 @@ func init() {
 }
 
 func run() error {
-	// TODO
+	// Read the source config file.
 	if sourceFile == "" {
 		log.Fatalln("There is no source file given")
 	}
+	abs, err := filepath.Abs(sourceFile)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Println(abs)
+	if err = config.ParseConfigFile(sourceFile); err != nil {
+		log.Fatalln(err)
+	}
+
 	sourceManager := source.NewManager()
-	sourceManager.AddSource(source.Source{
-		URL: "http://localhost:9080/text.html",
-	})
+	sourceManager.ReadSourcesFromConfig()
 	contentCrawler := crawler.New(sourceManager, "/home/ist/go/src/github.com/siglt/tosknight-storage")
 	contentCrawler.Run()
 	log.Println("Run called.")

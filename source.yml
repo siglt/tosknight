@@ -1,5 +1,20 @@
 webs:
-  - http://huanle.qq.com/cp/a20170209notice/
-  - http://test.tosback.com
+  - https://www.douban.com/about/agreement
+  - http://gb.corp.163.com/gb/legal.html
+  - https://render.alipay.com/p/f/fd-iztow1fi/index.html
+  - https://map.baidu.com/zt/client/privacy/index.html
+  - https://map.baidu.com/zt/client/service/index.html
+  - http://weibo.com/signup/v5/protocol
+  - https://www.zhihu.com/terms
+  - http://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
+  - http://weibo.com/signup/v5/privacy
+  - http://cache.amap.com/h5/h5/publish/238/index.html
+  - http://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html
+  - http://wap.amap.com/doc/serviceitem.html
+  - https://passport.baidu.com/static/passpc-account/html/protocal.html
+  - https://www.baidu.com/duty/yinsiquan.html
+  - https://ssl.zc.qq.com/chs/agreement1_chs.html
+  - http://weixin.qq.com/agreement?lang=zh_CN
+  - http://www.qq.com/privacy.htm
 
 storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"
