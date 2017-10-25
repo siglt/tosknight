@@ -1,3 +1,0 @@
-[submodule "storage"]
-	path = storage
-	url = git@github.com:gaocegege/tosknight-storage.git

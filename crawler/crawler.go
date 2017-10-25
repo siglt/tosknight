@@ -4,8 +4,8 @@ import (
 	"sync"
 
 	"github.com/asciimoo/colly"
-	"github.com/gaocegege/tosknight/source"
-	"github.com/gaocegege/tosknight/util"
+	"github.com/siglt/tosknight/source"
+	"github.com/siglt/tosknight/util"
 	log "github.com/sirupsen/logrus"
 )
 

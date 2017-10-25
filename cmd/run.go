@@ -15,8 +15,8 @@
 package cmd
 
 import (
-	"github.com/gaocegege/tosknight/crawler"
-	"github.com/gaocegege/tosknight/source"
+	"github.com/siglt/tosknight/crawler"
+	"github.com/siglt/tosknight/source"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -51,7 +51,7 @@ func run() error {
 	sourceManager.AddSource(source.Source{
 		URL: "http://localhost:9080/text.html",
 	})
-	contentCrawler := crawler.New(sourceManager, "/home/ist/go/src/github.com/gaocegege/tosknight/storage")
+	contentCrawler := crawler.New(sourceManager, "/home/ist/go/src/github.com/siglt/tosknight-storage")
 	contentCrawler.Run()
 	log.Println("Run called.")
 	return nil
