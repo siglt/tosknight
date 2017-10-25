@@ -5,7 +5,8 @@ import (
 	"path/filepath"
 
 	"github.com/asciimoo/colly"
-	"github.com/gaocegege/tosknight/git"
+	"github.com/gaocegege/tosknight/pkg/git"
+	"github.com/siglt/tosknight/pkg/meta"
 	"github.com/siglt/tosknight/util"
 	log "github.com/sirupsen/logrus"
 )
@@ -15,8 +16,9 @@ func parseResponse(response *colly.Response) {
 		log.Errorf("The status code of the response %v is %d", response.Request.AbsoluteURL, response.StatusCode)
 	}
 
+	URL := response.Request.URL.String()
 	gitManager := git.NewManager(StoragePath)
-	directory := filepath.Join(StoragePath, util.GetFileName(response.Request.URL.String()))
+	directory := filepath.Join(StoragePath, util.GetFileName(URL))
 	bufFilePath := filepath.Join(directory, util.BufFileName)
 	latestfilePath := filepath.Join(directory, util.LatestFileName)
 
@@ -33,6 +35,13 @@ func parseResponse(response *colly.Response) {
 		if err != nil {
 			log.Errorf("Failed to save content to file %s: %v", latestfilePath, err)
 		}
+
+		// Write the URL to the meta file to generate UI.
+		if err := meta.WriteMeta(directory, URL); err != nil {
+			log.Errorf("Failed to save meta data for %s: %v", directory, err)
+		}
+
+		// Commit the changes to storage repo.
 		gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.URL))
 		return
 	}
@@ -45,10 +54,15 @@ func parseResponse(response *colly.Response) {
 		persistentFileName := util.PersistentFileName()
 		persistentFilePath := filepath.Join(directory, persistentFileName)
 		log.Debugf("The content is changed, write to %s", persistentFilePath)
+
+		// Save the latest content to the persistent file
+		// and save the new content to the latest file.
 		util.CopyFile(latestfilePath, persistentFilePath)
 		util.CopyFile(bufFilePath, latestfilePath)
+
+		// Commit the persistent file and latest file.
 		gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.URL, persistentFileName))
 	} else {
-		log.Infof("There is no content changed in %s", response.Request.URL.String())
+		log.Infof("There is no content changed in %s", URL)
 	}
 }

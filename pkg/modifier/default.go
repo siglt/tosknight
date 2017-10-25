@@ -1,19 +1,21 @@
-package util
+package modifier
 
 import (
+	"log"
 	"os/exec"
 	"syscall"
-
-	log "github.com/sirupsen/logrus"
 )
 
 const (
 	diffCommand = "diff"
 )
 
+type DefaultModifier struct {
+	Modifier
+}
+
 // IsModified checks if the file is modified.
-// Deprecated.
-func IsModified(newFile string, oldFile string) (bool, error) {
+func (dm DefaultModifier) IsModified(newFile string, oldFile string) (bool, error) {
 	diffCmd := exec.Command(diffCommand, newFile, oldFile)
 	if err := diffCmd.Start(); err != nil {
 		log.Fatalf("cmd.Start: %v")
