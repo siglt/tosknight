@@ -1,15 +1,14 @@
 package config
 
-import (
-	"log"
+import "github.com/spf13/viper"
 
-	"github.com/spf13/viper"
-)
-
-// Buggy
-func ParseConfigFile(configFile string) {
-	viper.AddConfigPath(configFile)
+// ParseConfigFile parses the source file and insert the
+// content into viper.
+func ParseConfigFile(configFile string) error {
+	viper.SetConfigFile(configFile)
 	viper.AutomaticEnv()
-	viper.ReadInConfig()
-	log.Println(viper.Get("webs"))
+	if err := viper.ReadInConfig(); err != nil {
+		return err
+	}
+	return nil
 }
