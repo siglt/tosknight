@@ -51,6 +51,8 @@ func (c Crawler) parse(s source.Source) {
 	defer c.waitGroup.Add(-1)
 
 	collector := colly.NewCollector()
-	collector.OnResponse(parseResponse)
+	collector.OnResponse(func(response *colly.Response) {
+		parseResponse(response, s)
+	})
 	collector.Visit(s.URL)
 }

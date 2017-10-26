@@ -7,16 +7,17 @@ import (
 	"github.com/asciimoo/colly"
 	"github.com/gaocegege/tosknight/pkg/git"
 	"github.com/siglt/tosknight/pkg/meta"
+	"github.com/siglt/tosknight/source"
 	"github.com/siglt/tosknight/util"
 	log "github.com/sirupsen/logrus"
 )
 
-func parseResponse(response *colly.Response) {
+func parseResponse(response *colly.Response, source source.Source) {
 	if response.StatusCode != 200 {
 		log.Errorf("The status code of the response %v is %d", response.Request.AbsoluteURL, response.StatusCode)
 	}
 
-	URL := response.Request.URL.String()
+	URL := source.URL
 	gitManager := git.NewManager(StoragePath)
 	directory := filepath.Join(StoragePath, util.GetFileName(URL))
 	bufFilePath := filepath.Join(directory, util.BufFileName)
@@ -30,14 +31,14 @@ func parseResponse(response *colly.Response) {
 
 	// If there is no file now, just create the directory and the file.
 	if util.IsFileExists(latestfilePath) == false {
-		log.Debugln("Create latest file")
+		log.Infof("Create latest file for %s", URL)
 		_, err = util.SaveFile(response.Body, latestfilePath)
 		if err != nil {
 			log.Errorf("Failed to save content to file %s: %v", latestfilePath, err)
 		}
 
 		// Write the URL to the meta file to generate UI.
-		if err := meta.WriteMeta(directory, URL); err != nil {
+		if err := meta.WriteMeta(directory, source); err != nil {
 			log.Errorf("Failed to save meta data for %s: %v", directory, err)
 		}
 
@@ -53,7 +54,7 @@ func parseResponse(response *colly.Response) {
 	if isModified == true {
 		persistentFileName := util.PersistentFileName()
 		persistentFilePath := filepath.Join(directory, persistentFileName)
-		log.Debugf("The content is changed, write to %s", persistentFilePath)
+		log.Infof("The content is changed, write to %s", persistentFilePath)
 
 		// Save the latest content to the persistent file
 		// and save the new content to the latest file.
@@ -63,6 +64,6 @@ func parseResponse(response *colly.Response) {
 		// Commit the persistent file and latest file.
 		gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.URL, persistentFileName))
 	} else {
-		log.Infof("There is no content changed in %s", URL)
+		log.Debugf("There is no content changed in %s", URL)
 	}
 }

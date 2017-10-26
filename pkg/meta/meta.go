@@ -3,6 +3,7 @@ package meta
 import (
 	"path/filepath"
 
+	"github.com/siglt/tosknight/source"
 	"github.com/siglt/tosknight/util"
 	"gopkg.in/yaml.v2"
 )
@@ -11,13 +12,17 @@ const (
 	metaFileName = ".meta.yml"
 )
 
+// Meta if the type for meta file.
 type Meta struct {
 	Name string `yaml:"name"`
+	URL  string `yaml:url`
 }
 
-func WriteMeta(directory, URL string) error {
+// WriteMeta writes meta data to the .meta.yml in directory.
+func WriteMeta(directory string, source source.Source) error {
 	meta := Meta{
-		Name: URL,
+		Name: source.Name,
+		URL:  source.URL,
 	}
 
 	content, err := yaml.Marshal(meta)
