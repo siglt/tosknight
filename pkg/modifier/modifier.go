@@ -1,5 +1,6 @@
 package modifier
 
+// Modifier is the interface for modifier.
 type Modifier interface {
-	func IsModified(newFile string, oldFile string) (bool, error)
+	IsModified(newFile string, oldFile string) (bool, error)
 }

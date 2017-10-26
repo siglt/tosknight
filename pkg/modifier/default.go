@@ -10,6 +10,7 @@ const (
 	diffCommand = "diff"
 )
 
+// DefaultModifiler is the type for default modifier.
 type DefaultModifier struct {
 	Modifier
 }
