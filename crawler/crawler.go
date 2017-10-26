@@ -38,7 +38,10 @@ func New(s *source.Manager, path string) *Crawler {
 // Run runs the spider workers in parallel.
 func (c Crawler) Run() {
 	for _, source := range c.SourceManager.Sources {
-		go c.parse(source)
+		// There is one bug to use goroutine:
+		// all of these goroutines will call `git commit` in one repo,
+		// there may be data race problem.
+		c.parse(source)
 	}
 	c.waitGroup.Wait()
 	log.Println("The crawler has done its work :)")
@@ -48,6 +51,8 @@ func (c Crawler) parse(s source.Source) {
 	defer c.waitGroup.Add(-1)
 
 	collector := colly.NewCollector()
-	collector.OnResponse(parseResponse)
+	collector.OnResponse(func(response *colly.Response) {
+		parseResponse(response, s)
+	})
 	collector.Visit(s.URL)
 }

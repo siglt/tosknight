@@ -1,20 +1,37 @@
 webs:
-  - https://www.douban.com/about/agreement
-  - http://gb.corp.163.com/gb/legal.html
-  - https://render.alipay.com/p/f/fd-iztow1fi/index.html
-  - https://map.baidu.com/zt/client/privacy/index.html
-  - https://map.baidu.com/zt/client/service/index.html
-  - http://weibo.com/signup/v5/protocol
-  - https://www.zhihu.com/terms
-  - http://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
-  - http://weibo.com/signup/v5/privacy
-  - http://cache.amap.com/h5/h5/publish/238/index.html
-  - http://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html
-  - http://wap.amap.com/doc/serviceitem.html
-  - https://passport.baidu.com/static/passpc-account/html/protocal.html
-  - https://www.baidu.com/duty/yinsiquan.html
-  - https://ssl.zc.qq.com/chs/agreement1_chs.html
-  - http://weixin.qq.com/agreement?lang=zh_CN
-  - http://www.qq.com/privacy.htm
+  - name: 百度地图隐私政策
+    url: https://map.baidu.com/zt/client/privacy/index.html
+  - name: 百度地图用户服务条款
+    url: https://map.baidu.com/zt/client/service/index.html
+  - name: 支付宝服务协议
+    url: https://render.alipay.com/p/f/fd-iztow1fi/index.html
+  - name: 淘宝法律声明及隐私权政策
+    url: http://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
+  - name: 淘宝平台服务协议
+    url: http://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html
+  - name: 百度用户协议
+    url: https://passport.baidu.com/static/passpc-account/html/protocal.html
+  - name: 百度隐私权保护声明
+    url: https://www.baidu.com/duty/yinsiquan.html
+  - name: 腾讯 QQ 号码规则
+    url: https://ssl.zc.qq.com/chs/agreement1_chs.html
+  - name: 腾讯微信软件许可及服务协议
+    url: http://weixin.qq.com/agreement?lang=zh_CN
+  - name: 腾讯网隐私政策
+    url: http://www.qq.com/privacy.htm
+  - name: 微博服务使用协议
+    url: http://weibo.com/signup/v5/protocol
+  - name: 微博个人信息保护政策（修订版）
+    url: http://weibo.com/signup/v5/privacy
+  - name: 高德隐私权政策
+    url: http://cache.amap.com/h5/h5/publish/238/index.html
+  - name: 高德服务条款
+    url: http://wap.amap.com/doc/serviceitem.html
+  - name: 豆瓣使用协议
+    url: https://www.douban.com/about/agreement
+  - name: 网易隐私政策
+    url: http://gb.corp.163.com/gb/legal.html
+  - name: 知乎协议（草案）
+    url: https://www.zhihu.com/terms
 
 storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"

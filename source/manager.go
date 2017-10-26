@@ -19,9 +19,11 @@ func NewManager() *Manager {
 
 // ReadSourcesFromConfig reads sources from the source file.
 func (m *Manager) ReadSourcesFromConfig() {
-	for _, URL := range viper.GetStringSlice(config.WEBS) {
+	for _, source := range viper.Get(config.WEBS).([]interface{}) {
+		sourceMap := source.(map[interface{}]interface{})
 		m.AddSource(Source{
-			URL: URL,
+			URL:  sourceMap["url"].(string),
+			Name: sourceMap["name"].(string),
 		})
 	}
 }
