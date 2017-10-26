@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 
 	"github.com/asciimoo/colly"
-	"github.com/gaocegege/tosknight/pkg/git"
+	"github.com/siglt/tosknight/pkg/git"
 	"github.com/siglt/tosknight/pkg/meta"
 	"github.com/siglt/tosknight/source"
 	"github.com/siglt/tosknight/util"
