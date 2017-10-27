@@ -45,7 +45,7 @@ func (m Manager) SaveFile(content []byte, source source.Source) error {
 		return err
 	}
 
-	if err := m.SaveBackup(content); err != nil {
+	if err := m.SaveBackup(content, source); err != nil {
 		return err
 	}
 	return nil
@@ -100,14 +100,14 @@ func (m Manager) SaveLatest(content []byte, source source.Source) error {
 		}
 
 		// Commit the changes to storage repo.
-		gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.m.directory))
+		m.gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", source.Name))
 		return nil
 	}
 	return nil
 }
 
 // SaveBackup saves the snapshot of the tos.
-func (m Manager) SaveBackup(content []byte) error {
+func (m Manager) SaveBackup(content []byte, source source.Source) error {
 	latestHTML := filepath.Join(m.directory, LatestHTMLFileName)
 	bufHTML := filepath.Join(m.directory, BufHTMLFileName)
 	bufMarkdown := filepath.Join(m.directory, BufMarkdownFileName)
@@ -132,7 +132,7 @@ func (m Manager) SaveBackup(content []byte) error {
 		CopyFile(bufMarkdown, latestMarkdown)
 
 		// Commit the persistent file and latest file.
-		gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.m.directory, persistentFileName))
+		m.gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", source.Name, persistentMarkdown))
 	} else {
 		log.Debugf("There is no content changed in %s", m.directory)
 	}
