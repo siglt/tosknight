@@ -1,6 +1,7 @@
 package file
 
 import (
+	"fmt"
 	"path/filepath"
 
 	"github.com/siglt/tosknight/pkg/git"
@@ -99,7 +100,7 @@ func (m Manager) SaveLatest(content []byte, source source.Source) error {
 		}
 
 		// Commit the changes to storage repo.
-		// gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.m.directory))
+		gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.m.directory))
 		return nil
 	}
 	return nil
@@ -131,7 +132,7 @@ func (m Manager) SaveBackup(content []byte) error {
 		CopyFile(bufMarkdown, latestMarkdown)
 
 		// Commit the persistent file and latest file.
-		// gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.m.directory, persistentFileName))
+		gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.m.directory, persistentFileName))
 	} else {
 		log.Debugf("There is no content changed in %s", m.directory)
 	}
