@@ -10,10 +10,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// SOURCEFILE is the name of source file config.
-const SOURCEFILE = "sourceFile"
+const (
+	// SOURCEFILE is the name of source file config.
+	SOURCEFILE = "sourceFile"
+	STORAGEDIR = "storageDir"
+)
 
-var sourceFile string
+var (
+	sourceFile string
+	storageDir string
+)
 
 // runCmd represents the run command.
 var runCmd = &cobra.Command{
@@ -28,7 +34,8 @@ var runCmd = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(runCmd)
 
-	runCmd.Flags().StringVarP(&sourceFile, SOURCEFILE, "s", "", "Source directory to read from")
+	runCmd.Flags().StringVarP(&sourceFile, SOURCEFILE, "c", "", "Path to source.yml")
+	runCmd.Flags().StringVarP(&storageDir, STORAGEDIR, "s", "", "Path to the storage directory")
 }
 
 func run() error {
@@ -36,18 +43,22 @@ func run() error {
 	if sourceFile == "" {
 		log.Fatalln("There is no source file given")
 	}
-	abs, err := filepath.Abs(sourceFile)
+	absSourceFiles, err := filepath.Abs(sourceFile)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	log.Println(abs)
-	if err = config.ParseConfigFile(sourceFile); err != nil {
+	if err = config.ParseConfigFile(absSourceFiles); err != nil {
 		log.Fatalln(err)
 	}
 
+	if storageDir == "" {
+		log.Fatalln("There is no storage directory given")
+	}
+	absStorageDir, err := filepath.Abs(storageDir)
+
 	sourceManager := source.NewManager()
 	sourceManager.ReadSourcesFromConfig()
-	contentCrawler := crawler.New(sourceManager, "/home/ist/go/src/github.com/siglt/tosknight-storage")
+	contentCrawler := crawler.New(sourceManager, absStorageDir)
 	contentCrawler.Run()
 	log.Println("Run called.")
 	return nil
