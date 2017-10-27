@@ -1,4 +1,4 @@
-package util
+package file
 
 import (
 	"crypto/sha1"
@@ -9,8 +9,14 @@ import (
 	"time"
 )
 
-func PersistentFileName() string {
-	return fmt.Sprintf("%s.html", time.Now().Format(("2006-01-02-15:04:05")))
+var now = time.Now().Format(("2006-01-02-15:04:05"))
+
+func PersistentHTML() string {
+	return fmt.Sprintf(".%s.html", now)
+}
+
+func PersistentMarkdown() string {
+	return fmt.Sprintf("%s.md", now)
 }
 
 func GetFileName(URL string) string {
@@ -80,4 +86,10 @@ func CopyFile(src string, dst string) {
 	}
 	err = out.Sync()
 	return
+}
+
+func MkDir(path string) {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		os.Mkdir(path, os.ModePerm)
+	}
 }

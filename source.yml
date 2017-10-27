@@ -33,5 +33,7 @@ webs:
     url: http://gb.corp.163.com/gb/legal.html
   - name: 知乎协议（草案）
     url: https://www.zhihu.com/terms
+  - name: 测试网站
+    url: http://localhost:9080/text.html
 
 storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"

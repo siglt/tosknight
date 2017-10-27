@@ -1,15 +1,6 @@
-# Terms of Service Knight
+# [Terms of Service Knight](http://alpha.tosknight.org/)
 
-## 实现思路
-
-利用 Git 来做内容的 diff，如果有修改就 dump 成文件提交到 storage repo 中，原文件和 diff 输出分别存储，原文件用来做 diff 和备份，diff 用来前端展示。通知可以考虑 web hook，但是这样需要一个服务器，有支出。最好是发一个 PR，@ 感兴趣的所有人，让 GitHub 帮忙发邮件。
-
-## 进度
-
-### TODO
-
-* Config 文件读取有问题，考虑是不是直接用 cobra 集成的
-* storage 的 git Commit
+[![Go Report Card](https://goreportcard.com/badge/github.com/siglt/tosknight)](https://goreportcard.com/report/github.com/siglt/tosknight)
 
 ## 计划内功能
 
@@ -17,6 +8,10 @@
 * 如果较之先前的版本有变化，保存新版的协议内容，并对变化内容进行比较；
 * 可以添加需要跟踪的网站页面；
 * 可能会考虑链接可信时间戳的API。
+
+## 实现思路
+
+使用 [html2text](https://github.com/Alir3z4/html2text/) 输出内容，使用 Unix 内置 diff 判断文件修改，使用 [diff2html](https://github.com/rtfpessoa/diff2html) 渲染输出。
 
 ## 相关项目
 
