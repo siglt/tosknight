@@ -1,10 +1,7 @@
 package file
 
 import (
-<<<<<<< HEAD
 	"fmt"
-=======
->>>>>>> *: Add markdown support to avoid random changes
 	"path/filepath"
 
 	"github.com/siglt/tosknight/pkg/git"
@@ -48,11 +45,7 @@ func (m Manager) SaveFile(content []byte, source source.Source) error {
 		return err
 	}
 
-<<<<<<< HEAD
 	if err := m.SaveBackup(content, source); err != nil {
-=======
-	if err := m.SaveBackup(content); err != nil {
->>>>>>> *: Add markdown support to avoid random changes
 		return err
 	}
 	return nil
@@ -110,19 +103,15 @@ func (m Manager) SaveLatest(content []byte, source source.Source) error {
 <<<<<<< HEAD
 		m.gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", source.Name))
 =======
-		// gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.m.directory))
->>>>>>> *: Add markdown support to avoid random changes
+		gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.m.directory))
+>>>>>>> git: Add
 		return nil
 	}
 	return nil
 }
 
 // SaveBackup saves the snapshot of the tos.
-<<<<<<< HEAD
 func (m Manager) SaveBackup(content []byte, source source.Source) error {
-=======
-func (m Manager) SaveBackup(content []byte) error {
->>>>>>> *: Add markdown support to avoid random changes
 	latestHTML := filepath.Join(m.directory, LatestHTMLFileName)
 	bufHTML := filepath.Join(m.directory, BufHTMLFileName)
 	bufMarkdown := filepath.Join(m.directory, BufMarkdownFileName)
@@ -150,8 +139,8 @@ func (m Manager) SaveBackup(content []byte) error {
 <<<<<<< HEAD
 		m.gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", source.Name, persistentMarkdown))
 =======
-		// gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.m.directory, persistentFileName))
->>>>>>> *: Add markdown support to avoid random changes
+		gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.m.directory, persistentFileName))
+>>>>>>> git: Add
 	} else {
 		log.Debugf("There is no content changed in %s", m.directory)
 	}
