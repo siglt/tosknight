@@ -14,7 +14,7 @@ import (
 const (
 	BufHTMLFileName        = ".buf.html"
 	BufMarkdownFileName    = ".buf.md"
-	LatestHTMLFileName     = "latest.html"
+	LatestHTMLFileName     = ".latest.html"
 	LatestMarkdownFileName = "latest.md"
 )
 
@@ -100,7 +100,11 @@ func (m Manager) SaveLatest(content []byte, source source.Source) error {
 		}
 
 		// Commit the changes to storage repo.
+<<<<<<< HEAD
 		m.gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", source.Name))
+=======
+		gitManager.AddAndCommit(fmt.Sprintf("%s: First Commit", response.Request.m.directory))
+>>>>>>> git: Add
 		return nil
 	}
 	return nil
@@ -132,7 +136,11 @@ func (m Manager) SaveBackup(content []byte, source source.Source) error {
 		CopyFile(bufMarkdown, latestMarkdown)
 
 		// Commit the persistent file and latest file.
+<<<<<<< HEAD
 		m.gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", source.Name, persistentMarkdown))
+=======
+		gitManager.AddAndCommit(fmt.Sprintf("%s: Update %s", response.Request.m.directory, persistentFileName))
+>>>>>>> git: Add
 	} else {
 		log.Debugf("There is no content changed in %s", m.directory)
 	}
