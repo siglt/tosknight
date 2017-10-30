@@ -14,7 +14,7 @@ import (
 const (
 	BufHTMLFileName        = ".buf.html"
 	BufMarkdownFileName    = ".buf.md"
-	LatestHTMLFileName     = ".latest.html"
+	LatestHTMLFileName     = "latest.html"
 	LatestMarkdownFileName = "latest.md"
 )
 
