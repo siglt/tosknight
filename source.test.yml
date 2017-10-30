@@ -1,0 +1,5 @@
+webs:
+  - name: 测试网站
+    url: http://localhost:9080/text.html
+
+storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"
