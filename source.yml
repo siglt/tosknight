@@ -13,6 +13,10 @@ webs:
     url: https://passport.baidu.com/static/passpc-account/html/protocal.html
   - name: 百度隐私权保护声明
     url: https://www.baidu.com/duty/yinsiquan.html
+  - name: 腾讯服务协议
+    url: http://www.qq.com/contract.shtml
+  - name: QQ软件许可及服务协议
+    url: http://ti.qq.com/agreement/index.html
   - name: 腾讯 QQ 号码规则
     url: https://ssl.zc.qq.com/chs/agreement1_chs.html
   - name: 企业QQ软件许可及服务协议
@@ -37,5 +41,12 @@ webs:
     url: https://www.zhihu.com/terms
   - name: Microsoft 使用条款（中文）
     url: https://www.microsoft.com/zh-cn/legal/intellectualproperty/copyright/default.aspx
+  - name: 美图服务协议
+    url: https://www.meitu.com/services/use.html
+  - name: 美图隐私政策
+    url: http://www.qq.com/contract.shtml
+  - name: 美图法律声明
+    url: https://www.meitu.com/services/legal.html
+    
 
 storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"
