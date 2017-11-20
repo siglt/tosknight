@@ -1,52 +1,159 @@
 webs:
-  - name: 百度地图隐私政策
-    url: https://map.baidu.com/zt/client/privacy/index.html
-  - name: 百度地图用户服务条款
-    url: https://map.baidu.com/zt/client/service/index.html
-  - name: 支付宝服务协议
-    url: https://render.alipay.com/p/f/fd-iztow1fi/index.html
-  - name: 淘宝法律声明及隐私权政策
-    url: http://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
-  - name: 淘宝平台服务协议
-    url: http://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html
-  - name: 百度用户协议
-    url: https://passport.baidu.com/static/passpc-account/html/protocal.html
-  - name: 百度隐私权保护声明
-    url: https://www.baidu.com/duty/yinsiquan.html
-  - name: 腾讯服务协议
-    url: http://www.qq.com/contract.shtml
-  - name: QQ软件许可及服务协议
-    url: http://ti.qq.com/agreement/index.html
-  - name: 腾讯 QQ 号码规则
-    url: https://ssl.zc.qq.com/chs/agreement1_chs.html
-  - name: 企业QQ软件许可及服务协议
-    url: https://store.b.qq.com/static/eim.html
-  - name: 腾讯微信软件许可及服务协议
-    url: http://weixin.qq.com/agreement?lang=zh_CN
-  - name: 腾讯网隐私政策
-    url: http://www.qq.com/privacy.htm
-  - name: 微博服务使用协议
-    url: http://weibo.com/signup/v5/protocol
-  - name: 微博个人信息保护政策（修订版）
-    url: http://weibo.com/signup/v5/privacy
-  - name: 高德隐私权政策
-    url: http://cache.amap.com/h5/h5/publish/238/index.html
-  - name: 高德服务条款
-    url: http://wap.amap.com/doc/serviceitem.html
-  - name: 豆瓣使用协议
-    url: https://www.douban.com/about/agreement
-  - name: 网易隐私政策
-    url: http://gb.corp.163.com/gb/legal.html
-  - name: 知乎协议（草案）
-    url: https://www.zhihu.com/terms
-  - name: Microsoft 使用条款（中文）
-    url: https://www.microsoft.com/zh-cn/legal/intellectualproperty/copyright/default.aspx
-  - name: 美图服务协议
-    url: https://www.meitu.com/services/use.html
-  - name: 美图隐私政策
-    url: http://www.qq.com/contract.shtml
-  - name: 美图法律声明
-    url: https://www.meitu.com/services/legal.html
-    
+  - name: 腾讯
+    items:
+      - name: 腾讯服务协议
+        url: http://www.qq.com/contract.shtml
+      - name: 隐私政策
+        url: http://www.qq.com/privacy.htm
+      - name: QQ号码规则
+        url: https://ssl.zc.qq.com/chs/agreement1_chs.html
+      - name: QQ空间服务协议
+        url: https://qzone.qq.com/web/tk.html
+      - name: QQ软件许可及服务协议
+        url: http://ti.qq.com/agreement/index.html
+      - name: 腾讯邮箱用户服务协议
+        url: http://mail.qq.com/cgi-bin/readtemplate?check=false&t=mail_clause
+      - name: 腾讯微信软件许可及服务协议
+        url: https://weixin.qq.com/agreement?lang=zh_CN
+      - name: 微信隐私保护指引
+        url: http://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy
+      - name: 微信支付用户服务协议
+        url: http://weixin.qq.com/cgi-bin/readtemplate?t=weixin_business_pay
+      - name: 微信电子商务服务协议
+        url: http://weixin.qq.com/cgi-bin/readtemplate?t=weixin_business_agreement
+      - name: 腾讯企业微信软件许可及服务协议
+        url: https://work.weixin.qq.com/eula
+      - name: 腾讯开放平台开发者协议
+        url: http://wiki.open.qq.com/index.php?title=%E8%85%BE%E8%AE%AF%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E8%80%85%E5%8D%8F%E8%AE%AE&oldid=45440
+      - name: 腾讯游戏许可及服务协议
+        url: http://game.qq.com/contract.shtml
+  - name: 百度
+    items:
+      - name: 百度用户协议
+        url: https://passport.baidu.com/static/passpc-account/html/protocal.html
+      - name: 百度隐私权保护声明
+        url: https://www.baidu.com/duty/yinsiquan.html
+      - name: 知识产权声明
+        url: https://www.baidu.com/duty/copyright.html
+      - name: 权利保护声明
+        url: https://www.baidu.com/duty/right.html
+      - name: 免责声明
+        url: https://www.baidu.com/duty/index.html
+      - name: 百度钱包服务协议
+        url: https://co.baifubao.com/content/payhelp/introduction/serviceagreement/2013-10-17/1385373751.html
+      - name: 百度糯米用户协议
+        url: https://www.nuomi.com/about/eula
+      - name: 百度糯米隐私权保护声明
+        url: https://www.nuomi.com/pcindex/about/policy
+      - name: 百度糯米声明
+        url: https://www.nuomi.com/about/person
+      - name: 百度游戏服务协议
+        url: http://shouji.baidu.com/mobres/static?gameservice
+      - name: 百度网盘服务协议
+        url: http://pan.baidu.com/disk/duty
+      - name: 百度地图用户服务条款
+        url: https://map.baidu.com/zt/client/service/index.html
+      - name: 百度地图隐私政策
+        url: https://map.baidu.com/zt/client/privacy/index.html
+  - name: 阿里巴巴
+    items:
+      - name: 淘宝平台服务协议
+        url: http://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html
+      - name: 法律声明及隐私权政策
+        url: http://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html
+      - name: 支付宝服务协议
+        url: https://render.alipay.com/p/f/fd-iztow1fi/index.html
+      - name: 支付宝隐私权政策
+        url: https://docs.alipay.com/policies/privacy/alipay
+      - name: 知识产权保护平台使用协议
+        url: https://ipp.alibabagroup.com/agreement.htm
+  - name: 京东
+    items:
+      - name: 京东用户注册协议
+        url: https://in.m.jd.com/help/app/register_info.html
+      - name: 京东隐私政策
+        url: https://about.jd.com/privacy/
+  - name: 新浪
+    items:
+      - name: 微博服务使用协议
+        url: http://weibo.com/signup/v5/protocol
+      - name: 微博个人信息保护政策（修订版）
+        url: https://weibo.com/signup/v5/privacy
+  - name: OFO
+    items:
+      - name: OFO共享单车服务协议
+        url: https://common.ofo.so/about/legal.html?11#general
+  - name: 网易
+    items:
+      - name: 网易邮箱帐号服务条款
+        url: http://reg.163.com/agreement.shtml
+      - name: 网易集团隐私政策
+        url: http://reg.163.com/agreement_game.shtml
+      - name: 网易手机帐号服务条款
+        url: https://reg.163.com/agreement_mobile.shtml
+      - name: 隐私政策
+        url: http://gb.corp.163.com/gb/legal.html
+  - name: DJI
+    items:
+      - name: 使用条款
+        url: http://www.dji.com/cn/terms
+      - name: 隐私权政策
+        url: http://www.dji.com/cn/policy
+  - name: WeGene
+    items:
+      - name: WeGene 服务协议
+        url: https://www.wegene.com/page/tos
+      - name: 隐私保护
+        url: https://www.wegene.com/page/privacy
+  - name: 携程
+    items:
+      - name: 携程旅行网服务协议
+        url: http://pages.ctrip.com/public/serve%20guideline.htm
+  - name: 美团
+    items:
+      - name: 美团网用户协议
+        url: http://www.meituan.com/about/terms
+      - name: 隐私政策
+        url: http://www.meituan.com/about/privacy?mtt=1.about%2Fterms.0.0.j9wjlciz
+  - name: 大众点评
+    items:
+      - name: 用户使用协议
+        url: http://www.dianping.com/aboutus/useragreement
+      - name: 商户收录声明
+        url: http://www.dianping.com/aboutus/shopagreement
+      - name: 大众点评网商户服务协议
+        url: http://www.dianping.com/aboutus/merchantagreement
+      - name: 隐私政策
+        url: http://www.dianping.com/aboutus/privacy
+  - name: 小红书
+    items:
+      - name: 小红书用户注册协议/小红书用户隐私政策
+        url: http://www.xiaohongshu.com/terms
+  - name: 高德
+    items:
+        - name: 高德隐私权政策
+          url: http://cache.amap.com/h5/h5/publish/238/index.html
+        - name: 高德服务条款
+          url: http://wap.amap.com/doc/serviceitem.html
+  - name: 美图
+    items:
+      - name: 美图服务协议
+        url: https://www.meitu.com/services/use.html
+      - name: 美图隐私政策
+        url: http://www.qq.com/contract.shtml
+      - name: 美图法律声明
+        url: https://www.meitu.com/services/legal.html
+  - name: 豆瓣
+    items:
+      - name: 豆瓣使用协议
+        url: https://www.douban.com/about/agreement
+  - name: 知乎
+    items:
+      - name: 知乎协议（草案）
+        url: https://www.zhihu.com/terms
+  - name: 微软
+    items:
+      - name: Microsoft 使用条款（中文）
+        url: https://www.microsoft.com/zh-cn/legal/intellectualproperty/copyright/default.aspx
 
 storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"
