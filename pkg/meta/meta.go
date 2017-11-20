@@ -14,15 +14,17 @@ const (
 
 // Meta if the type for meta file.
 type Meta struct {
-	Name string `yaml:"name"`
-	URL  string `yaml:url`
+	Name     string `yaml:"name"`
+	URL      string `yaml:url`
+	Category string `yaml:category`
 }
 
 // WriteMeta writes meta data to the .meta.yml in directory.
 func WriteMeta(directory string, source source.Source) error {
 	meta := Meta{
-		Name: source.Name,
-		URL:  source.URL,
+		Name:     source.Name,
+		URL:      source.URL,
+		Category: source.Category,
 	}
 
 	content, err := yaml.Marshal(meta)

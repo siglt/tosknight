@@ -155,5 +155,3 @@ webs:
     items:
       - name: Microsoft 使用条款（中文）
         url: https://www.microsoft.com/zh-cn/legal/intellectualproperty/copyright/default.aspx
-
-storage: "/home/ist/go/src/github.com/siglt/tosknight-storage"

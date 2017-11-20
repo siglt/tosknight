@@ -1,5 +1,9 @@
 package config
 
 const (
-	WEBS = "webs"
+	WEBS     = "webs"
+	ITEMS    = "items"
+	NAME     = "name"
+	ITEMNAME = "name"
+	ITEMURL  = "url"
 )

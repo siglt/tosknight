@@ -2,6 +2,7 @@ package source
 
 // Source is the type for source of terms of service.
 type Source struct {
-	URL  string
-	Name string
+	URL      string
+	Name     string
+	Category string
 }

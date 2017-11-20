@@ -19,12 +19,17 @@ func NewManager() *Manager {
 
 // ReadSourcesFromConfig reads sources from the source file.
 func (m *Manager) ReadSourcesFromConfig() {
-	for _, source := range viper.Get(config.WEBS).([]interface{}) {
-		sourceMap := source.(map[interface{}]interface{})
-		m.AddSource(Source{
-			URL:  sourceMap["url"].(string),
-			Name: sourceMap["name"].(string),
-		})
+	for _, category := range viper.Get(config.WEBS).([]interface{}) {
+		categoryMap := category.(map[interface{}]interface{})
+		categoryName := categoryMap[config.NAME].(string)
+		for _, source := range categoryMap[config.ITEMS].([]interface{}) {
+			sourceMap := source.(map[interface{}]interface{})
+			m.AddSource(Source{
+				URL:      sourceMap[config.ITEMURL].(string),
+				Name:     sourceMap[config.ITEMNAME].(string),
+				Category: categoryName,
+			})
+		}
 	}
 }
 
