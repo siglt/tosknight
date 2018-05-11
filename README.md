@@ -18,6 +18,10 @@
 
 ## 架构与实现
 
+<div align="center">
+    <img src="./docs/image/arch.png" width="500">
+</div>
+
 Tosknight 共有三个组件组成：分别是 [CLI][1]，[storage][2] 和 [UI][3]。
 
 [Tosknight CLI][1] 是一个命令行工具，在使用的时候需要指定两个参数，分别是 `source.yml` 的位置和 Tosknight storage 目录所在的位置。CLI 会通过 [colly](https://github.com/gocolly/colly) 爬取 [source.yml](./source.yml) 中的所有用户协议。随后使用 [html2text](https://github.com/Alir3z4/html2text/) 输出内容，使用 Unix 内置 diff 判断文件修改，如果修改则会保存修改版本。同时在这个过程中同样会保存一些元信息，为之后的 UI 展示做准备。
