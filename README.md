@@ -12,8 +12,8 @@
 ## 界面展示
 
 <div align="center">
-    <img src="./docs/image/demo.png" width="350">
-    <img src="./docs/image/dji.png" width="350">
+    <img src="./docs/image/demo.png" width="400">
+    <img src="./docs/image/dji.png" width="400">
 </div>
 
 ## 架构与实现
