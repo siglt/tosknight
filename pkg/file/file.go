@@ -4,11 +4,12 @@ import (
 	"fmt"
 	"path/filepath"
 
+	log "github.com/sirupsen/logrus"
+
 	"github.com/siglt/tosknight/pkg/git"
 	"github.com/siglt/tosknight/pkg/meta"
 	"github.com/siglt/tosknight/source"
 	"github.com/siglt/tosknight/util"
-	log "github.com/sirupsen/logrus"
 )
 
 const (

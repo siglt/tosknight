@@ -1,8 +1,9 @@
 package source
 
 import (
-	"github.com/siglt/tosknight/config"
 	"github.com/spf13/viper"
+
+	"github.com/siglt/tosknight/config"
 )
 
 // Manager is the type for source manager.

@@ -3,11 +3,12 @@ package cmd
 import (
 	"path/filepath"
 
+	log "github.com/sirupsen/logrus"
+	"github.com/spf13/cobra"
+
 	"github.com/siglt/tosknight/config"
 	"github.com/siglt/tosknight/crawler"
 	"github.com/siglt/tosknight/source"
-	log "github.com/sirupsen/logrus"
-	"github.com/spf13/cobra"
 )
 
 const (

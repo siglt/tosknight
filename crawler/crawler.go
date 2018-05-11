@@ -4,9 +4,10 @@ import (
 	"sync"
 
 	"github.com/asciimoo/colly"
+	log "github.com/sirupsen/logrus"
+
 	"github.com/siglt/tosknight/source"
 	"github.com/siglt/tosknight/util"
-	log "github.com/sirupsen/logrus"
 )
 
 // StoragePath is the path to storage directory.

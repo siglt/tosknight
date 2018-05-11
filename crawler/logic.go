@@ -4,11 +4,12 @@ import (
 	"path/filepath"
 
 	"github.com/asciimoo/colly"
+	log "github.com/sirupsen/logrus"
+
 	"github.com/siglt/tosknight/pkg/file"
 	"github.com/siglt/tosknight/pkg/git"
 	"github.com/siglt/tosknight/source"
 	"github.com/siglt/tosknight/util"
-	log "github.com/sirupsen/logrus"
 )
 
 func parseResponse(response *colly.Response, source source.Source) {
