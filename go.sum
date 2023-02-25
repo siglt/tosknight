@@ -59,8 +59,8 @@ golang.org/x/crypto v0.0.0-20171023145632-2509b142fb2b h1:vXxKaRjFiMao1tDygYZfT9
 golang.org/x/crypto v0.0.0-20171023145632-2509b142fb2b/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/net v0.0.0-20171026234051-7b572d500b07 h1:brDp4dOd2BTGLs1PO44TEZEWCh7jeKHY2D0EBT/c+/A=
 golang.org/x/net v0.0.0-20171026234051-7b572d500b07/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
-golang.org/x/sys v0.0.0-20171026204733-164713f0dfce h1:BDMHZhZQhI6KuA6MzarSMksZq8ZegBJ3mSbFKLEYG/w=
-golang.org/x/sys v0.0.0-20171026204733-164713f0dfce/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.1.0 h1:kunALQeHf1/185U1i0GOB/fy1IPRDDpuoOOqRReG57U=
+golang.org/x/sys v0.1.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/text v0.1.1-0.20171024115504-6eab0e8f74e8 h1:k/cUCFJhtupACOsPO7E+ehZHYcv0ucmU0DTapioGJFA=
 golang.org/x/text v0.1.1-0.20171024115504-6eab0e8f74e8/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 gopkg.in/airbrake/gobrake.v2 v2.0.9 h1:7z2uVWwn7oVeeugY1DtlPAy5H+KYgB1KeKTnqjNatLo=
