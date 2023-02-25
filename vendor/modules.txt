@@ -71,19 +71,20 @@ github.com/spf13/pflag
 github.com/spf13/viper
 # github.com/stretchr/testify v1.7.0
 ## explicit
-# golang.org/x/crypto v0.0.0-20171023145632-2509b142fb2b
-## explicit
+# golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
 golang.org/x/crypto/ssh/terminal
-# golang.org/x/net v0.0.0-20171026234051-7b572d500b07
-## explicit
+# golang.org/x/net v0.0.0-20220722155237-a158d28d115b
 golang.org/x/net/html
 golang.org/x/net/html/atom
 golang.org/x/net/html/charset
-# golang.org/x/sys v0.0.0-20171026204733-164713f0dfce
-## explicit
+# golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/text v0.1.1-0.20171024115504-6eab0e8f74e8
+# golang.org/x/term v0.0.0-20210927222741-03fcf44c2211
+golang.org/x/term
+# golang.org/x/text v0.3.8
 ## explicit
 golang.org/x/text/encoding
 golang.org/x/text/encoding/charmap
@@ -95,6 +96,8 @@ golang.org/x/text/encoding/korean
 golang.org/x/text/encoding/simplifiedchinese
 golang.org/x/text/encoding/traditionalchinese
 golang.org/x/text/encoding/unicode
+golang.org/x/text/internal/language
+golang.org/x/text/internal/language/compact
 golang.org/x/text/internal/tag
 golang.org/x/text/internal/utf8internal
 golang.org/x/text/language
